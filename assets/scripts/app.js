@@ -22,10 +22,9 @@ $(function () {
       url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/users',
       data: {firstName: $('#firstName').val(), lastName: $('#lastName').val(), role: $('option:selected').text()}
     }).done(function (results) {
-      $('.save-status').text(results.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500)
+      $('.save-status').text(results.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500).attr('class', 'sm alert alert-success')
     }).fail(function (error) {
-      console.log(error);
-      $('.save-status').text(error.responseJSON.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500)
+      $('.save-status').attr('class', 'alert alert-danger').text(error.responseJSON.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500)
     })
   })
 })

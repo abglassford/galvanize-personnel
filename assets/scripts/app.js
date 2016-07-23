@@ -4,7 +4,7 @@ $(function () {
     method: 'GET',
     url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
   }).done(function (data) {
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= data.length; i++) {
       $('#op' + i).text(data[i - 1].title)
       $('#op' + i).attr('data-url', data[i - 1].img)
     }
@@ -16,7 +16,6 @@ $(function () {
   })
   $('form').on('submit', function (event) {
     event.preventDefault()
-    console.log($('#firstName').val() + ' ' + $('#lastName').val());
     $.ajax({
       method: 'POST',
       url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',

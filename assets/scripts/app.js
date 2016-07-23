@@ -19,7 +19,7 @@ $(function () {
     console.log($('#firstName').val() + ' ' + $('#lastName').val());
     $.ajax({
       method: 'POST',
-      url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/users',
+      url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/users',
       data: {firstName: $('#firstName').val(), lastName: $('#lastName').val(), role: $('option:selected').text()}
     }).done(function (results) {
       $('.save-status').text(results.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500).attr('class', 'sm alert alert-success')

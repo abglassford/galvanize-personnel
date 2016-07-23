@@ -18,7 +18,9 @@
     </head>
     <body>
       <br>
-      <div class="container-fluid col-md-6 col-md-offset-3">
+      <div class="container-fluid col-md-5 col-md-offset-3">
+        <h1>Galvanize Personnel</h1>
+        <hr>
         <form>
           <div class="form-group">
             <label for="firstName">First Name</label>
@@ -32,14 +34,14 @@
             <label for="roles">Roles</label>
             <select id="roles"class="form-control">
               <option disabled selected>Select an option here</option>
-              <option></option>
-              <option></option>
-              <option></option>
-              <option></option>
+              <option id="op1"></option>
+              <option id="op2"></option>
+              <option id="op3"></option>
+              <option id="op4"></option>
             </select>
           </div>
           <div class="placeholder">
-            <img class="center-block"src="http://placehold.it/250x275?text=Role" value="Role">
+            <img id="rolePic" class="center-block"src="http://placehold.it/250x275?text=Role" value="Role">
             <br>
           </div>
             <button type="submit" class="btn btn-primary btn-block">Save</button>
@@ -48,7 +50,6 @@
 
             </p>
           </div>
-
         </form>
       </div>
 

@@ -2,7 +2,7 @@
 $(function () {
   $.ajax({
     method: 'GET',
-    url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
+    url: 'https://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
   }).done(function (data) {
     for (var i = 1; i <= 4; i++) {
       $('#op' + i).text(data[i - 1].title)

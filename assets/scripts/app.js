@@ -1,8 +1,5 @@
 // Your code here!
 $(function () {
-  $('form').on('submit', function (event) {
-    event.preventDefault()
-  })
   $.ajax({
     method: 'GET',
     url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/roles'
@@ -16,5 +13,19 @@ $(function () {
       $('#rolePic').attr('src', url)
     })
 
+  })
+  $('form').on('submit', function (event) {
+    event.preventDefault()
+    console.log($('#firstName').val() + ' ' + $('#lastName').val());
+    $.ajax({
+      method: 'POST',
+      url: 'http://galvanize-student-apis.herokuapp.com/gpersonnel/users',
+      data: {firstName: $('#firstName').val(), lastName: $('#lastName').val(), role: $('option:selected').text()}
+    }).done(function (results) {
+      $('.save-status').text(results.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500)
+    }).fail(function (error) {
+      console.log(error);
+      $('.save-status').text(error.responseJSON.message).css('visibility', 'visible').delay(2000).animate({opacity: 0}, 500)
+    })
   })
 })

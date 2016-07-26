@@ -1,4 +1,3 @@
-// Your code here!
 $(function () {
   $.ajax({
     method: 'GET',
